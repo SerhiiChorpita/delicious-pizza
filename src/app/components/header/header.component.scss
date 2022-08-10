@@ -1,0 +1,31 @@
+@import '../../shared/style/variables';
+
+.la-brand{
+    display: inline-flex;
+    width: 72px;
+    height: 39px;
+    border-color: $primary;
+    background-color: $primary;
+    padding: 5px;
+    border-radius: 5px;
+    img{
+        width: 100%;
+        height: 100%;
+    }
+}
+.navbar-nav .nav-item .nav-link{
+border:2px solid transparent;
+border-radius: 5px;
+}
+.navbar-nav .nav-item .rout-active{
+border:2px solid $primary;
+border-radius: 5px;
+}
+.basket{
+    display: inline-flex;
+    img{
+        width: 28px;
+        height: 28px;
+        margin-right: 10px;
+    }
+}

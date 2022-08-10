@@ -1,0 +1,39 @@
+які в нас будуть сторінки?
+які в нас будуть компоненти, які не змінюються?
+звідки ми будемо брати різні залежності інтерфейси, класи, директиви, пайпи(де усе це буде складуватись)?
+---> ---<
+
+app/
+    components/ ---> тут будуть зберігатись частинки сайту, які будуть повторюватись (напир. heqder and footer) ---<
+        header.component
+        footer.component
+    pages/---> статичні сторінки ---<
+        home.component
+        discount.component
+        discount-info.component
+        product.component
+        product-ifo.component
+        delivery.component
+        payment.component
+        about.component
+        news.component
+        offerta.component
+        partners.component
+        contact.component
+        checkout.component
+    /shared ---> бажано зберігати компоненти, директиви, пайпи по різних модулях---<
+        style/
+            _variables.scss
+            _mixin.scss
+            _base.scss
+        interfaces/
+        pipes/
+        directivse/
+        guards/ ---> для роздіення бізнес логіки ---<
+        services/
+    admin.component
+        admin-category.component
+        admin-product.component
+        admin-discount.component
+        admin-news.component
+        admin-orders.component
