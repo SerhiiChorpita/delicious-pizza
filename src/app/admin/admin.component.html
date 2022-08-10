@@ -10,7 +10,8 @@
             <button class="nav-link" type="button" [routerLink]="[ 'news' ]" routerLinkActive="active">News</button>
             <button class="nav-link" type="button" [routerLink]="[ 'order' ]" routerLinkActive="active">Order</button>
         </div>
-        <div class="tab-content" id="v-pills-tabContent">
+        <div class="tab-content w-100" id="v-pills-tabContent">
+            <router-outlet></router-outlet>
         </div>
     </div>
 </div>

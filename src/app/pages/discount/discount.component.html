@@ -1,1 +1,26 @@
-<p>discount works!</p>
+<div class="container mt-3 mb-3">
+    <div class="row">
+        <ng-container *ngIf="userDiscount.length>0">
+            <div class="col-6 mt-3" *ngFor="let discount of userDiscount">
+                <div class="card w-100">
+                    <img [src]="discount.imagePath" class="card-img-top" alt="...">
+                    <div class="card-body text-center">
+                        <a href="#" class="btn btn-warning">Детальніше</a>
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+        <ng-container *ngIf="userDiscount.length === 0">
+            <div class="card text-center">
+                <div class="card-header">
+                </div>
+                <div class="card-body">
+                    <h1>Discounts not added yet</h1>
+                </div>
+                <div class="card-footer text-muted">
+                </div>
+            </div>
+        </ng-container>
+
+    </div>
+</div>
