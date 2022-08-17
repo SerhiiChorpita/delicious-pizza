@@ -25,6 +25,7 @@ import { AdminOrderComponent } from './admin/admin-order/admin-order.component';
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'discount', component: DiscountComponent },
+  { path: 'discount/:id', component: DiscountInfoComponent },
   { path: 'product/:category', component: ProductComponent },
   { path: 'delivery', component: DeliveryComponent },
   { path: 'payment', component: PaymentComponent },

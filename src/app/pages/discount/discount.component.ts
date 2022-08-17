@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DiscountService } from 'src/app/shared/services/discount/discount.service';
-import { IDiscount } from '../../../app/shared/interfaces/discount/discount.interface';
+import { IDiscountResponse } from '../../../app/shared/interfaces/discount/discount.interface';
 
 @Component({
   selector: 'app-discount',
@@ -9,7 +9,7 @@ import { IDiscount } from '../../../app/shared/interfaces/discount/discount.inte
 })
 export class DiscountComponent implements OnInit {
 
-  public userDiscount: Array<IDiscount> = [];
+  public userDiscount: Array<IDiscountResponse> = [];
 
   constructor(
     private discountService: DiscountService
@@ -20,6 +20,8 @@ export class DiscountComponent implements OnInit {
   }
 
   getDiscounts(): void {
-    this.userDiscount = this.discountService.getDiscount();
+    this.discountService.getAll().subscribe(data => {
+      this.userDiscount = data;
+    });
   }
 }

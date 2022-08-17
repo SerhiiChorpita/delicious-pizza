@@ -1,34 +1,35 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { IDiscount } from '../../interfaces/discount/discount.interface';
+import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
+import { IDiscountRequest, IDiscountResponse } from '../../interfaces/discount/discount.interface';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DiscountService {
 
-  private discount: Array<IDiscount> = [
-    {
-      id: 1,
-      description: '«LA П’ЄЦ» турбується про своїх клієнтів. Львів – велике і сучасне місто, тому ми стараємось цінувати Ваш час так само, як цінуєте його Ви. Наша доставка завжди з’являється біля ваших дверей вчасно. Якщо ні – замовник отримує промокод на безкоштовну піцу або рол до наступного замовлення **.',
-      imagePath: 'https://la.ua/wp-content/uploads/2021/08/1-1-1.jpg'
-    }
-  ];
-  constructor() { }
+  private url = environment.BACKEND_URL;
+  private api = { discount: `${this.url}/discounts` }
 
-  getDiscount(): Array<IDiscount> {
-    return this.discount;
+  constructor(private http: HttpClient) { }
+
+  getAll(): Observable<IDiscountResponse[]> {
+    return this.http.get<IDiscountResponse[]>(this.api.discount)
+  }
+  getOne(id: number): Observable<IDiscountResponse> {
+    return this.http.get<IDiscountResponse>(`${this.api.discount}/${id}`)
   }
 
-  addDiscount(discount: IDiscount): void {
-    this.discount.push(discount);
+  create(discount: IDiscountRequest): Observable<IDiscountResponse> {
+    return this.http.post<IDiscountResponse>(this.api.discount, discount);
   }
 
-  updateDiscount(discount: IDiscount, id: number): void {
-    const index = this.discount.findIndex(discount => discount.id === id);
-    this.discount.splice(index, 1, discount)
+  update(discount: IDiscountRequest, id: number): Observable<IDiscountResponse> {
+    return this.http.patch<IDiscountResponse>(`${this.api.discount}/${id}`, discount)
   }
-  deleteDiscount(id: number): void {
-    const index = this.discount.findIndex(discount => discount.id === id);
-    this.discount.splice(index, 1)
+
+  delete(id: number): Observable<void> {
+    return this.http.delete<void>(`${this.api.discount}/${id}`)
   }
 }

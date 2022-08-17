@@ -5,7 +5,7 @@
                 <div class="card w-100">
                     <img [src]="discount.imagePath" class="card-img-top" alt="...">
                     <div class="card-body text-center">
-                        <a href="#" class="btn btn-warning">Детальніше</a>
+                        <a href="#" class="btn btn-warning" [routerLink]="[ '/discount', discount.id]">Детальніше</a>
                     </div>
                 </div>
             </div>
