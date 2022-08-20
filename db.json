@@ -10,5 +10,31 @@
       "imagePath": "https://la.ua/wp-content/uploads/2021/08/dn_790_400.jpg",
       "id": 2
     }
+  ],
+  "categories": [
+    {
+      "name": "піца",
+      "path": "pizza",
+      "imagePath": "https://firebasestorage.googleapis.com/v0/b/la-ua-54158.appspot.com/o/images%2Fpizza.svg?alt=media&token=d16bd18e-ae14-450d-9d96-d0021200c3d6",
+      "id": 1
+    },
+    {
+      "name": "салат",
+      "path": "salad",
+      "imagePath": "https://firebasestorage.googleapis.com/v0/b/la-ua-54158.appspot.com/o/images%2Fsalad.svg?alt=media&token=06989769-39ce-414e-8c78-be58ffccb2ec",
+      "id": 2
+    },
+    {
+      "name": "десерти",
+      "path": "deserts",
+      "imagePath": "https://firebasestorage.googleapis.com/v0/b/la-ua-54158.appspot.com/o/images%2Fdesert.svg?alt=media&token=d82f69f4-a57b-4652-af92-a55438208e26",
+      "id": 3
+    },
+    {
+      "name": "напої",
+      "path": "drinks",
+      "imagePath": "https://firebasestorage.googleapis.com/v0/b/la-ua-54158.appspot.com/o/images%2Fdrinks.svg?alt=media&token=5cb5f788-be53-4896-952a-92a101acfd8c",
+      "id": 4
+    }
   ]
 }
