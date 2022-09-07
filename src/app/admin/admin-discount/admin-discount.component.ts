@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { IDiscount } from 'src/app/shared/interfaces/discount/discount.interface';
 import { DiscountService } from 'src/app/shared/services/discount/discount.service';
 
@@ -18,6 +19,7 @@ export class AdminDiscountComponent implements OnInit {
 
 
   constructor(
+    private toastr: ToastrService,
     private discountService: DiscountService
   ) { }
 
@@ -40,6 +42,8 @@ export class AdminDiscountComponent implements OnInit {
       this.getDiscounts();
       this.resetForm();
     })
+    this.toastr.success('Category successfully created');
+
   }
   editDiscount(discount: IDiscount): void {
     this.description = discount.description;
@@ -56,6 +60,7 @@ export class AdminDiscountComponent implements OnInit {
     this.discountService.update(updateDiscount, this.editId).subscribe(data => {
       console.log(`patch responce`, data);
       this.resetForm();
+      this.toastr.success('Category successfully updated');
     })
   }
 
@@ -63,6 +68,7 @@ export class AdminDiscountComponent implements OnInit {
     if (confirm('Are you sure?')) {
       this.discountService.delete(discount.id).subscribe(() => {
         this.getDiscounts();
+        this.toastr.success('Category successfully deleted');
       });
     }
   }

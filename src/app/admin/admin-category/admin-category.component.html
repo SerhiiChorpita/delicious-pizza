@@ -22,8 +22,8 @@
                 </div>
             </ng-container>
             <ng-container *ngIf="isUploaded">
-                <img [src]="valueByControl('imagePath')" alt="">
-                <button type="button" class="btn btn-danger mb-3" (click)="deleteImage()">delete</button>
+                <img [src]="valueByControl('imagePath')" width="100px" alt="">
+                <button type="button" class="btn btn-danger m-3" (click)="deleteImage()">delete</button>
             </ng-container>
 
             <button [disabled]="categoryForm.invalid" type="submit" class="btn btn-success w-100">{{editStatus?'Save':

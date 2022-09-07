@@ -36,5 +36,28 @@
       "imagePath": "https://firebasestorage.googleapis.com/v0/b/la-ua-54158.appspot.com/o/images%2Fdrinks.svg?alt=media&token=5cb5f788-be53-4896-952a-92a101acfd8c",
       "id": 4
     }
+  ],
+  "products": [
+    {
+      "category": {
+        "name": "піца",
+        "path": "pizza",
+        "imagePath": "https://firebasestorage.googleapis.com/v0/b/la-ua-54158.appspot.com/o/images%2Fpizza.svg?alt=media&token=d16bd18e-ae14-450d-9d96-d0021200c3d6",
+        "id": 1
+      },
+      "name": "Піца La П’єц",
+      "path": "lapiec",
+      "description": "соус томатний, шинка, баварські ковбаски, сир моцарела, ковбаса салямі, прошуто.",
+      "weight": "450 г",
+      "price": 260,
+      "proteins": 14.7,
+      "carbohydrates": 26.2,
+      "fat": 10.1,
+      "calories": 258,
+      "imagePath": "https://firebasestorage.googleapis.com/v0/b/la-ua-54158.appspot.com/o/images%2Fla-pyets.jpg?alt=media&token=c5729d93-92cf-4b0b-bd53-caeb383e7f83",
+      "count": 1,
+      "id": 1,
+      "fats": 10.1
+    }
   ]
 }
