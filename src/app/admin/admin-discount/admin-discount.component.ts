@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
-import { IDiscount } from 'src/app/shared/interfaces/discount/discount.interface';
+import { IDiscountResponse } from 'src/app/shared/interfaces/discount/discount.interface';
 import { DiscountService } from 'src/app/shared/services/discount/discount.service';
 
 @Component({
@@ -10,7 +10,7 @@ import { DiscountService } from 'src/app/shared/services/discount/discount.servi
 })
 export class AdminDiscountComponent implements OnInit {
 
-  public adminDiscounts!: IDiscount[];
+  public adminDiscounts!: IDiscountResponse[];
   public description!: string;
   public imagePath = 'https://la.ua/wp-content/uploads/2021/08/dn_790_400.jpg';
 
@@ -45,7 +45,7 @@ export class AdminDiscountComponent implements OnInit {
     this.toastr.success('Category successfully created');
 
   }
-  editDiscount(discount: IDiscount): void {
+  editDiscount(discount: IDiscountResponse): void {
     this.description = discount.description;
     this.editStatus = true;
     this.imagePath = discount.imagePath;
@@ -64,7 +64,7 @@ export class AdminDiscountComponent implements OnInit {
     })
   }
 
-  deleteDiscount(discount: IDiscount): void {
+  deleteDiscount(discount: IDiscountResponse): void {
     if (confirm('Are you sure?')) {
       this.discountService.delete(discount.id).subscribe(() => {
         this.getDiscounts();

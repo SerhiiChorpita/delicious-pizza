@@ -58,6 +58,66 @@
       "count": 1,
       "id": 1,
       "fats": 10.1
+    },
+    {
+      "category": {
+        "name": "салат",
+        "path": "salad",
+        "imagePath": "https://firebasestorage.googleapis.com/v0/b/la-ua-54158.appspot.com/o/images%2Fsalad.svg?alt=media&token=06989769-39ce-414e-8c78-be58ffccb2ec",
+        "id": 2
+      },
+      "name": "Інсалата ді Тоно",
+      "path": "insalata-di-tono",
+      "description": "оливки, огірок, помідор чері, салат айсберг, оливкова олія, фреш лимонний, тунець, перепелине яйце, цибуля синя, кунжут.",
+      "weight": "280 г ",
+      "price": 210,
+      "proteins": 6.8,
+      "carbohydrates": 2.6,
+      "fats": 9.2,
+      "calories": 122,
+      "imagePath": "https://firebasestorage.googleapis.com/v0/b/la-ua-54158.appspot.com/o/images%2Finsalata-di-tono.jpg?alt=media&token=4d955814-632c-4fe2-bba4-9ad13a0e5867",
+      "count": 1,
+      "id": 2
+    },
+    {
+      "category": {
+        "name": "десерти",
+        "path": "deserts",
+        "imagePath": "https://firebasestorage.googleapis.com/v0/b/la-ua-54158.appspot.com/o/images%2Fdesert.svg?alt=media&token=d82f69f4-a57b-4652-af92-a55438208e26",
+        "id": 3
+      },
+      "name": "Сирники",
+      "path": "syrnyky",
+      "description": "сирники, карамельний соус, сметана",
+      "weight": "100 г",
+      "price": 87,
+      "proteins": 15.3,
+      "carbohydrates": 13.6,
+      "fats": 14.3,
+      "calories": 247,
+      "imagePath": "https://firebasestorage.googleapis.com/v0/b/la-ua-54158.appspot.com/o/images%2Fsyrnyky.jpg?alt=media&token=1fc3d4e0-1b58-4744-9000-729d0f3abdb8",
+      "count": 1,
+      "id": 3
+    },
+    {
+      "category": {
+        "name": "напої",
+        "path": "drinks",
+        "imagePath": "https://firebasestorage.googleapis.com/v0/b/la-ua-54158.appspot.com/o/images%2Fdrinks.svg?alt=media&token=5cb5f788-be53-4896-952a-92a101acfd8c",
+        "id": 4
+      },
+      "name": "Сік з м'якоттю томатний з сіллю",
+      "path": "tomat",
+      "description": "Сік з м'якоттю томатний з сіллю ТМ “Galicia”, 1 л",
+      "weight": "1 л",
+      "price": 63,
+      "proteins": 0,
+      "carbohydrates": 0,
+      "fats": 0,
+      "calories": 0,
+      "imagePath": "https://firebasestorage.googleapis.com/v0/b/la-ua-54158.appspot.com/o/images%2Ftomat.jpg?alt=media&token=2d9ac6dc-daa8-4515-a327-3f79e74c4c96",
+      "count": 1,
+      "id": 4
     }
   ]
 }

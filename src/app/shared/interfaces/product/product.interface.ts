@@ -12,6 +12,7 @@ export interface IProductRequest {
     carbohydrates: number;
     fats: number;
     calories: number;
+    count: number
 }
 
 export interface IProductResponse extends IProductRequest {

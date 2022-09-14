@@ -17,8 +17,8 @@ export class ProductService {
     return this.http.get<IProductResponse[]>(this.api.products)
   }
 
-  getAllByCaategory(category: string): Observable<IProductResponse[]> {
-    return this.http.get<IProductResponse[]>(`${this.api.products}?author.name=typicode${category}`)
+  getAllByCategory(name: string): Observable<IProductResponse[]> {
+    return this.http.get<IProductResponse[]>(`${this.api.products}?category.path=${name}`);
   }
 
   getOne(id: number): Observable<IProductResponse> {

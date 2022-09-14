@@ -15,10 +15,14 @@ import { ToastrService } from 'ngx-toastr';
 export class AdminProductComponent implements OnInit {
   public adminCategories: Array<ICategoryResponse> = [];
   public adminProducts: Array<IProductResponse> = [];
+
   public productForm!: FormGroup;
+
   public editStatus = false;
+
   public isUploaded = false;
   public uploadPercent = 0;
+
   private currentProductId = 0;
   private currentCategoryId = 0;
   public isOpen = false;
