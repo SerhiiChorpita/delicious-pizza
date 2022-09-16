@@ -43,8 +43,6 @@ export class ProductInfoComponent implements OnInit {
       } else {
         basket.push(product);
       }
-    } else {
-      basket.push(product);
     }
     localStorage.setItem('basket', JSON.stringify(basket))
     product.count = 1;

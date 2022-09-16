@@ -36,6 +36,8 @@ import { environment } from '../environments/environment';
 import { provideStorage, getStorage } from '@angular/fire/storage';
 
 import { ToastrModule } from 'ngx-toastr';
+import { AuthorizationComponent } from './pages/authorization/authorization.component';
+import { OfficeComponent } from './pages/office/office.component';
 
 @NgModule({
   declarations: [
@@ -60,7 +62,9 @@ import { ToastrModule } from 'ngx-toastr';
     AdminProductComponent,
     AdminDiscountComponent,
     AdminNewsComponent,
-    AdminOrderComponent
+    AdminOrderComponent,
+    AuthorizationComponent,
+    OfficeComponent
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ROLE } from 'src/app/shared/constans/role.constant';
 import { IProductResponse } from 'src/app/shared/interfaces/product/product.interface';
+import { AccountService } from 'src/app/shared/services/account/account.service';
 import { OrderService } from 'src/app/shared/services/order/order.service';
 
 @Component({
@@ -11,14 +13,20 @@ export class HeaderComponent implements OnInit {
 
   public total = 0;
   private basket: Array<IProductResponse> = [];
+  public isLogin = false;
+  public loginUrl = '';
+  public loginPage = '';
 
   constructor(
+    private accountService: AccountService,
     private orderService: OrderService
   ) { }
 
   ngOnInit(): void {
     this.loadBasket();
     this.updateBasket();
+    this.checkUserLogin();
+    this.checkUpdatesUserLogin();
   }
 
   loadBasket(): void {
@@ -36,6 +44,29 @@ export class HeaderComponent implements OnInit {
   updateBasket(): void {
     this.orderService.changeBasket.subscribe(() => {
       this.loadBasket()
+    })
+  }
+
+  checkUserLogin(): void {
+    const currentUser = JSON.parse(localStorage.getItem('currentUser') as string);
+    if (currentUser && currentUser.role === ROLE.ADMIN) {
+      this.isLogin = true;
+      this.loginUrl = 'admin';
+      this.loginPage = 'Admin';
+    } else if (currentUser && currentUser.role === ROLE.USER) {
+      this.isLogin = true;
+      this.loginUrl = 'office';
+      this.loginPage = 'Office';
+    } else {
+      this.isLogin = false;
+      this.loginUrl = '';
+      this.loginPage = '';
+    }
+  }
+
+  checkUpdatesUserLogin(): void {
+    this.accountService.isUserLogin$.subscribe(() => {
+      this.checkUserLogin();
     })
   }
 
