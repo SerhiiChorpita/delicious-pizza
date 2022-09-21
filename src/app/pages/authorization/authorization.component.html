@@ -1,17 +1,30 @@
-<div class="row">
-    <div class="col-4 m-auto">
-        <form [formGroup]="authForm" (ngSubmit)="login()">
-            <div class="mb-3">
-                <label for="email" class="form-label">Email</label>
-                <input formControlName="email" name="email" type="text" class="form-control" id="email">
+<div class="limiter">
+    <div class="container-login100">
+        <div class="wrap-login100">
+            <div class="login100-pic js-tilt" data-tilt>
+                <img src="assets/images/admin-login-image.png" alt="IMG">
             </div>
-            <div class="mb-3">
-                <label for="password" class="form-label">Password</label>
-                <input formControlName="password" name="password" type="password" class="form-control" id="password"
-                    autocomplete="off">
-            </div>
-
-            <button [disabled]="authForm.invalid" type="submit" class="btn btn-success w-100">Login</button>
-        </form>
+            <form class="login100-form validate-form" [formGroup]="authForm">
+                <span class="login100-form-title">Admin login</span>
+                <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+                    <input formControlName="email" class="input100" type="text" name="email" placeholder="Email">
+                    <span class="focus-input100"></span>
+                    <span class="symbol-input100">
+                        <i class="fa fa-envelope" aria-hidden="true"></i>
+                    </span>
+                </div>
+                <div class="wrap-input100 validate-input" data-validate="Password is required">
+                    <input formControlName="password" class="input100" type="password" name="pass"
+                        placeholder="Password">
+                    <span class="focus-input100"></span>
+                    <span class="symbol-input100">
+                        <i class="fa fa-lock" aria-hidden="true"></i>
+                    </span>
+                </div>
+                <div class="container-login100-form-btn">
+                    <button class="login100-form-btn" type="button" (click)="loginUser()">Login</button>
+                </div>
+            </form>
+        </div>
     </div>
 </div>

@@ -34,10 +34,15 @@ import { AdminOrderComponent } from './admin/admin-order/admin-order.component';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideStorage, getStorage } from '@angular/fire/storage';
+import { provideFirestore, getFirestore } from '@angular/fire/firestore';
+import { provideAuth, getAuth } from '@angular/fire/auth';
 
 import { ToastrModule } from 'ngx-toastr';
 import { AuthorizationComponent } from './pages/authorization/authorization.component';
 import { OfficeComponent } from './pages/office/office.component';
+
+import { AuthDialogComponent } from './components/auth-dialog/auth-dialog.component';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -64,7 +69,8 @@ import { OfficeComponent } from './pages/office/office.component';
     AdminNewsComponent,
     AdminOrderComponent,
     AuthorizationComponent,
-    OfficeComponent
+    OfficeComponent,
+    AuthDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -75,7 +81,10 @@ import { OfficeComponent } from './pages/office/office.component';
     HttpClientModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideStorage(() => getStorage()),
-    ToastrModule.forRoot()
+    provideFirestore(() => getFirestore()),
+    provideAuth(() => getAuth()),
+    ToastrModule.forRoot(),
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
