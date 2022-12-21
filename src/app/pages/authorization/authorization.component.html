@@ -7,7 +7,8 @@
             <form class="login100-form validate-form" [formGroup]="authForm">
                 <span class="login100-form-title">Admin login</span>
                 <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
-                    <input formControlName="email" class="input100" type="text" name="email" placeholder="Email">
+                    <input formControlName="email" class="input100" type="text" name="email" placeholder="Email"
+                        autocomplete="off">
                     <span class="focus-input100"></span>
                     <span class="symbol-input100">
                         <i class="fa fa-envelope" aria-hidden="true"></i>
@@ -15,7 +16,7 @@
                 </div>
                 <div class="wrap-input100 validate-input" data-validate="Password is required">
                     <input formControlName="password" class="input100" type="password" name="pass"
-                        placeholder="Password">
+                        placeholder="Password" autocomplete="off">
                     <span class="focus-input100"></span>
                     <span class="symbol-input100">
                         <i class="fa fa-lock" aria-hidden="true"></i>
